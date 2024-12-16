@@ -1,0 +1,30 @@
+.navbar {
+  display: flex;
+  gap: 20px;
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+.ul {
+  padding-inline-start: 1em;
+}
+
+.ul li {
+  line-height: 2;
+  list-style-type: none;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+}
+
+.activeLink {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  background-color: #007bff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
