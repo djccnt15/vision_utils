@@ -1,4 +1,4 @@
-import styles from './Layout.module.css'
+import styles from './css/Layout.module.css'
 import PageList from './PageList'
 
 const Layout = ({ children }) => {

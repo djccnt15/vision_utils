@@ -4,12 +4,10 @@
 }
 
 .nav {
-  width: 250px;
+  min-width: 200px;
   background-color: #f4f4f4;
-  padding: 10px;
 }
 
 .main {
   flex: 1;
-  padding: 20px;
 }
