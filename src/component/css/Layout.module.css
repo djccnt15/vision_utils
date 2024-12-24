@@ -3,11 +3,11 @@
   height: 100vh;
 }
 
-.nav {
+.div nav {
   min-width: 200px;
   background-color: #f4f4f4;
 }
 
-.main {
+.div main {
   flex: 1;
 }
