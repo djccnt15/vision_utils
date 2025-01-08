@@ -12,14 +12,15 @@ const GetCoordinate = () => {
   const { showImage } = useImageShow(canvasRef)
 
   const [resizeRatio, setResizeRatio] = useState(1)
-  const [rectangle, setRectangle] = useState({ x1: '', y1: '', x2: '', y2: '' })
+  const [rectangle, setRectangle] = useState({ x1: '', y1: '', x2: '', y2: '', thickness: '10' })
 
   const drawRectangle = () => {
-    const { x1, y1, x2, y2 } = rectangle
+    const { x1, y1, x2, y2, thickness } = rectangle
     const x1num = parseInt(x1, 10)
     const x2num = parseInt(x2, 10)
     const y1num = parseInt(y1, 10)
     const y2num = parseInt(y2, 10)
+    const thicknessNum = parseInt(thickness, 10)
 
     if (x1num > x2num || y1num > y2num) {
       alert('Please enter valid coordinates.')
@@ -32,13 +33,12 @@ const GetCoordinate = () => {
 
     const rectangleImg = image.clone()
     const color = new cv.Scalar(0, 255, 0, 255)
-    const thickness = 2
     cv.rectangle(
       rectangleImg,
       new cv.Point(x1num, y1num),
       new cv.Point(x2num, y2num),
       color,
-      thickness
+      thicknessNum
     )
     return rectangleImg
   }
@@ -121,6 +121,14 @@ const GetCoordinate = () => {
               type="number"
               value={rectangle.y2}
               onChange={(e) => setRectangle({ ...rectangle, y2: e.target.value })}
+            />
+          </label>
+          <label>
+            thickness: &nbsp;
+            <input
+              type="number"
+              value={rectangle.thickness}
+              onChange={(e) => setRectangle({ ...rectangle, thickness: e.target.value })}
             />
           </label>
           <button onClick={handleDrawing}>Draw Rectangle</button>
